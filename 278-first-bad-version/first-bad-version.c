@@ -3,11 +3,10 @@
 
 int firstBadVersion(int n) {
     int left = 1;
-    int right = n;
-    while (left < right) {
-        int mid = left + (right - left) / 2;
+    while (left < n) {
+        int mid = left + (n - left) / 2;
         if (isBadVersion(mid)) {
-            right = mid; //as can be more bad versions before it
+            n = mid; //as can be more bad versions before it
         } else {
             left = mid + 1; 
         }
